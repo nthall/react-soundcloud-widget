@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SoundCloud from '../../';
 
 export default class CustomWidget extends React.Component {
   static propTypes = {
-    url: React.PropTypes.string.isRequired,
-    id: React.PropTypes.string.isRequired,
-    opts: React.PropTypes.array.isRequired,
+    url: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    opts: PropTypes.array.isRequired,
   };
 
   componentDidUpdate() {

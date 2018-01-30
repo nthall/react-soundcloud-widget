@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Table,
   TableHeader,
@@ -10,8 +11,8 @@ import {
 
 export default class OptionsTable extends React.Component {
   static propTypes = {
-    opts: React.PropTypes.array.isRequired,
-    onChange: React.PropTypes.func.isRequired,
+    opts: PropTypes.array.isRequired,
+    onChange: PropTypes.func.isRequired,
   };
 
   onRowSelection(selectedIndices) {

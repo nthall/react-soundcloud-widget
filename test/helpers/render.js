@@ -6,7 +6,8 @@ import expect from 'expect';
 import proxyquire from 'proxyquire';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TestUtils from 'react-addons-test-utils';
+import ReactTestUtils from 'react-dom/test-utils';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 /**
  * Stub out SoundCloud
@@ -38,7 +39,7 @@ function setup() {
 export function render(props) {
   const { SoundCloud } = setup();
 
-  const renderer = TestUtils.createRenderer();
+  const renderer = new ShallowRenderer();
   renderer.render(React.createElement(SoundCloud, props));
 
   const output = renderer.getRenderOutput();
@@ -82,9 +83,9 @@ export function renderDOM(props) {
     }
   }
 
-  const div = document.createElement('div');
+  const div = window.document.createElement('div');
   const container = ReactDOM.render(<Container { ...props } />, div);
-  const output = TestUtils.findRenderedComponentWithType(container, SoundCloud);
+  const output = ReactTestUtils.findRenderedComponentWithType(container, SoundCloud);
 
   function rerender(newProps = {}) {
     container.setState(newProps);

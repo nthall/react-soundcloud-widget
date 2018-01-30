@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import createWidget from './lib/createWidget';
 
 /**
@@ -125,37 +126,37 @@ class SoundCloud extends React.Component {
 SoundCloud.propTypes = {
   // url to play. It's kept in sync, changing it will
   // cause the widget to refresh and play the new url.
-  url: React.PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 
   // custom ID for widget iframe element
-  id: React.PropTypes.string,
+  id: PropTypes.string,
 
-  height: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
+  height: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
   ]),
 
   // widget parameters: appearance, auto play, and callback for SC.Widget.load()
-  opts: React.PropTypes.shape({
-    auto_play: React.PropTypes.bool,
-    visual: React.PropTypes.bool,
-    buying: React.PropTypes.bool,
-    liking: React.PropTypes.bool,
-    download: React.PropTypes.bool,
-    sharing: React.PropTypes.bool,
-    show_artwork: React.PropTypes.bool,
-    show_comments: React.PropTypes.bool,
-    show_playcount: React.PropTypes.bool,
-    show_user: React.PropTypes.bool,
-    show_reposts: React.PropTypes.bool,
-    hide_related: React.PropTypes.bool,
-    callback: React.PropTypes.func
+  opts: PropTypes.shape({
+    auto_play: PropTypes.bool,
+    visual: PropTypes.bool,
+    buying: PropTypes.bool,
+    liking: PropTypes.bool,
+    download: PropTypes.bool,
+    sharing: PropTypes.bool,
+    show_artwork: PropTypes.bool,
+    show_comments: PropTypes.bool,
+    show_playcount: PropTypes.bool,
+    show_user: PropTypes.bool,
+    show_reposts: PropTypes.bool,
+    hide_related: PropTypes.bool,
+    callback: PropTypes.func
   }),
 
   // event subscriptions
-  onPlay: React.PropTypes.func,
-  onPause: React.PropTypes.func,
-  onEnd: React.PropTypes.func,
+  onPlay: PropTypes.func,
+  onPause: PropTypes.func,
+  onEnd: PropTypes.func,
 };
 
 SoundCloud.defaultProps = {
